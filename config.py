@@ -124,46 +124,46 @@ contract_abi = [
 		"type": "function"
 	},
 	{
-		"anonymous": false,
+		"anonymous": "false",
 		"inputs": [
 			{
-				"indexed": false,
+				"indexed": "false",
 				"internalType": "uint256",
 				"name": "time",
 				"type": "uint256"
 			},
 			{
-				"indexed": true,
+				"indexed": "true",
 				"internalType": "address",
 				"name": "user",
 				"type": "address"
 			},
 			{
-				"indexed": false,
+				"indexed": "false",
 				"internalType": "uint256",
 				"name": "digit",
 				"type": "uint256"
 			},
 			{
-				"indexed": false,
+				"indexed": "false",
 				"internalType": "uint16",
 				"name": "randomDigit",
 				"type": "uint16"
 			},
 			{
-				"indexed": true,
+				"indexed": "true",
 				"internalType": "bool",
 				"name": "isWinner",
 				"type": "bool"
 			},
 			{
-				"indexed": true,
+				"indexed": "true",
 				"internalType": "uint256",
 				"name": "bet",
 				"type": "uint256"
 			},
 			{
-				"indexed": false,
+				"indexed": "false",
 				"internalType": "address",
 				"name": "refferer",
 				"type": "address"
@@ -204,16 +204,16 @@ contract_abi = [
 		"type": "function"
 	},
 	{
-		"anonymous": false,
+		"anonymous": "false",
 		"inputs": [
 			{
-				"indexed": false,
+				"indexed": "false",
 				"internalType": "uint256",
 				"name": "requestId",
 				"type": "uint256"
 			},
 			{
-				"indexed": false,
+				"indexed": "false",
 				"internalType": "uint256[]",
 				"name": "randomWords",
 				"type": "uint256[]"
@@ -223,16 +223,16 @@ contract_abi = [
 		"type": "event"
 	},
 	{
-		"anonymous": false,
+		"anonymous": "false",
 		"inputs": [
 			{
-				"indexed": false,
+				"indexed": "false",
 				"internalType": "uint256",
 				"name": "requestId",
 				"type": "uint256"
 			},
 			{
-				"indexed": false,
+				"indexed": "false",
 				"internalType": "uint32",
 				"name": "numWords",
 				"type": "uint32"
