@@ -29,7 +29,7 @@ async def authenticate(update: Update, context: ContextTypes.DEFAULT_TYPE) -> in
     user_msg = update.message.text
     print(user_msg)
 
-    addr = contract.functions.authCodes(user_msg).call()
+    addr = await contract.functions.authCodes(user_msg).call()
     print(addr)
     if addr == constants.ADDRESS_ZERO:
         print("Invalid Authcode")
@@ -54,7 +54,7 @@ async def retry(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_msg = update.message.text
     print(user_msg)
 
-    addr = contract.functions.authCodes(user_msg).call()
+    addr = await contract.functions.authCodes(user_msg).call()
     print(addr == constants.ADDRESS_ZERO)
 
     if addr == constants.ADDRESS_ZERO:
@@ -82,7 +82,7 @@ async def retry(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def get_user_balance(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Displays Balance"""
     addr = context.user_data["user_address"]
-    bal = contract.functions.getUserBalance(addr).call()
+    bal = await contract.functions.getUserBalance(addr).call()
     print(bal)
     usdt_value = bal / (10 ** 18)
 
@@ -96,7 +96,7 @@ async def get_user_balance(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def get_pool_balance(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Displays Balance"""
-    bal = contract.functions.contractBalance().call()
+    bal = await contract.functions.contractBalance().call()
     print(bal)
     usdt_value = bal / (10 ** 18)
     await update.message.reply_text(f"Pool Balance is {usdt_value}")
@@ -123,7 +123,7 @@ async def get_num(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     user_input = update.message.text
 
     addr = context.user_data["user_address"]
-    bal = contract.functions.getUserBalance(addr).call()
+    bal = await contract.functions.getUserBalance(addr).call()
     print(bal)
     usdt_value = bal / (10 ** 18)
 
@@ -141,9 +141,9 @@ async def get_results(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int
     bet = context.user_data['bet']
     bet = bet*(10**18)
     authcode = context.user_data["auth_tkn"]
-    result = contract.functions.playGameTelegram(int(bet), int(input_num), authcode).call()
+    result = await contract.functions.playGameTelegram(int(bet), int(input_num), authcode).call()
     print(result)
-    rand_num = contract.functions.randomNumber().call()
+    rand_num = await contract.functions.randomNumber().call()
     rand_num = rand_num % 10
 
     if input_num == rand_num:
@@ -157,7 +157,7 @@ async def get_results(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int
 async def share_reward(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Share Refferal link"""
     addr = context.user_data["user_address"]
-    ref_tkn = contract.functions.getRefferalToken(addr).call()
+    ref_tkn = await contract.functions.getRefferalToken(addr).call()
     # refferals = contract.functions.refferals(addr).call()
     print(ref_tkn)
     await update.message.reply_text(
