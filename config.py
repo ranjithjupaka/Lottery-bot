@@ -1,5 +1,5 @@
 url = 'http://betdapp.co/'
-provider_url = 'https://eth-mainnet.g.alchemy.com/v2/NaMGT7MD3oTwWl447n3LoAn9FCpeZuC1'
+provider_url = 'https://bsc-dataseed.binance.org/'
 contract_addr = "0x66cEe0f181DeF0991D59089Cc6300D3C766A61B7"
 contract_abi = [
 	{
