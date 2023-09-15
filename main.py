@@ -15,7 +15,7 @@ TOKEN, VALUE, NUM, BET, RESULT, RETRY = range(6)
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     """Send a message when the command /start is issued."""
     await update.message.reply_html(
-        "Hi I am your LotteryDapp bot\nEnter your Token to Authenticate your account and Play games",
+        "Hi I am your BetDapp bot\nEnter your Token to Authenticate your account and Play games",
         reply_markup=ReplyKeyboardRemove()
     )
 
