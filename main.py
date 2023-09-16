@@ -141,7 +141,7 @@ async def get_results(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int
     bet = context.user_data['bet']
     bet = bet*(10**18)
     authcode = context.user_data["auth_tkn"]
-    result =  contract.functions.playGameTelegram(int(bet), int(input_num), authcode).call()
+    result =  contract.functions.playGameTelegram(int(bet), int(input_num), authcode,{ gasLimit: 500000 }).call()
     print(result)
     rand_num =  contract.functions.randomNumber().call()
     rand_num = rand_num % 10
